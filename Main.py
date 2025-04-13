@@ -29,7 +29,7 @@ def AddNewCar():
 #create a defined menu for AutoCountry with options to show authorized vehicles and option to exit
 def menu():
     print("********************************")
-    print("AutoCountry Vehicle Finder V.01")
+    print("AutoCountry Vehicle Finder V.03")
     print("********************************")
     print("Please Enter the following number below from the following menu:")
     print("")
