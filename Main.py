@@ -1,9 +1,9 @@
 import os
 
-# File to store the authorized vehicles
+#File to store the authorized vehicles
 SAVE_FILE = "AUTHLIST.txt"
 
-# Load vehicles from a txt file or use default list
+#Load vehicles from a txt file or use default list
 def load_vehicles():
     if os.path.exists(SAVE_FILE):
         with open(SAVE_FILE, "r") as f:
@@ -11,7 +11,7 @@ def load_vehicles():
     else:
         return [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan' ]
 
-# Save vehicles to the txt file
+#Save vehicles to the txt file
 def save_vehicles():
     with open(SAVE_FILE, "w") as f:
         for vehicle in AllowedVehiclesList:
