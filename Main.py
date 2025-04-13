@@ -1,3 +1,4 @@
+
 #ADDED SET OF ALLOWED VEHICLES
 AllowedVehiclesList = [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan' ]
 
@@ -25,7 +26,10 @@ def Search():
 
 #create a option to add authorized vehicles
 def AddNewCar():
-    print("Please Enter the full Vehicle name you would like to add:")
+    new_vehicle = input("Please Enter the full Vehicle name you would like to add:")
+    AllowedVehiclesList.append(new_vehicle)
+    print(f"You have added \"{new_vehicle}\" as an authorized vehicle.")
+    menu()
 #create a defined menu for AutoCountry with options to show authorized vehicles and option to exit
 def menu():
     print("********************************")
