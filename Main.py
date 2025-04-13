@@ -1,7 +1,23 @@
+import os
 
-#ADDED SET OF ALLOWED VEHICLES
-AllowedVehiclesList = [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan' ]
+# File to store the authorized vehicles
+SAVE_FILE = "AUTHLIST.txt"
 
+# Load vehicles from a txt file or use default list
+def load_vehicles():
+    if os.path.exists(SAVE_FILE):
+        with open(SAVE_FILE, "r") as f:
+            return [line.strip() for line in f.readlines()]
+    else:
+        return [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan' ]
+
+# Save vehicles to the txt file
+def save_vehicles():
+    with open(SAVE_FILE, "w") as f:
+        for vehicle in AllowedVehiclesList:
+            f.write(vehicle + "\n")
+
+AllowedVehiclesList = load_vehicles()
 #create a defined option to call for the list then returns to menu
 def Printlist():
     print("The AutoCountry sales manager has authorized the purchase and selling of the following vehicles:")
@@ -28,6 +44,7 @@ def Search():
 def AddNewCar():
     new_vehicle = input("Please Enter the full Vehicle name you would like to add:")
     AllowedVehiclesList.append(new_vehicle)
+    save_vehicles()
     print(f"You have added \"{new_vehicle}\" as an authorized vehicle.")
     menu()
 #create a defined menu for AutoCountry with options to show authorized vehicles and option to exit
